@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dancarlyon_Submissions extension
+ */
+-->
+<config>
+    <modules>
+        <Dancarlyon_Submissions>
+            <version>1.0.0</version>
+        </Dancarlyon_Submissions>
+    </modules>
+    
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <dancarlyon_submissions before="Mage_Contacts">Dancarlyon_Submissions</dancarlyon_submissions>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+    
+    <global>
+        <resources>
+            <dancarlyon_submissions_setup>
+                <setup>
+                    <module>Dancarlyon_Submissions</module>
+                    <class>Dancarlyon_Submissions_Model_Resource_Setup</class>
+                </setup>
+            </dancarlyon_submissions_setup>
+        </resources>
+        <blocks>
+            <dancarlyon_submissions>
+                <class>Dancarlyon_Submissions_Block</class>
+            </dancarlyon_submissions>
+        </blocks>
+        <helpers>
+            <dancarlyon_submissions>
+                <class>Dancarlyon_Submissions_Helper</class>
+            </dancarlyon_submissions>
+        </helpers>
+        <models>
+            <dancarlyon_submissions>
+                <class>Dancarlyon_Submissions_Model</class>
+                <resourceModel>dancarlyon_submissions_resource</resourceModel>
+            </dancarlyon_submissions>
+            <dancarlyon_submissions_resource>
+                <class>Dancarlyon_Submissions_Model_Resource</class>
+                <entities>
+                    <submission>
+                        <table>contact_form</table>
+                    </submission>
+                </entities>
+            </dancarlyon_submissions_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <dancarlyon_submissions>
+                    <file>dancarlyon_submissions.xml</file>
+                </dancarlyon_submissions>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Dancarlyon_Submissions before="Mage_Adminhtml">Dancarlyon_Submissions_Adminhtml</Dancarlyon_Submissions>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
